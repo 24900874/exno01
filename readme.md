@@ -42,49 +42,53 @@ df.describe()
 df.info()
 ```
 
-![info](https://github.com/user-attachments/assets/da2a5f9f-0988-487f-81ce-93eef92e81b0)
+![{4B1ECAF8-06DF-46CA-9E13-580CDB133EA2}](https://github.com/user-attachments/assets/6c403bbc-5ea9-4ad8-bd1f-43c0ca7a10fd)
+
 ```
-df.heaad()
+df.head(4)
 ```
-![head](https://github.com/user-attachments/assets/de102b53-0ca9-493f-b811-91bc7e8f97b4)
+![image](https://github.com/user-attachments/assets/3d0d360c-2fb9-4261-ae86-93e8b25e0c6f)
+
 ```
-df.tail()
+df.tail(3)
 ```
-![tail](https://github.com/user-attachments/assets/858ba30e-756d-4ed4-a398-34c35abf79f9)
+![Screenshot 2024-10-18 173458](https://github.com/user-attachments/assets/953790cb-f258-48d3-85c8-997685943f05)
 
 ```
 df.shape
 ```
 ```
-(21, 12)
+(12, 10)
 ```
 ### REMOVING NULL VALUES FORM THE DATA 
 ```
 df.isnull()
 ```
-![is null](https://github.com/user-attachments/assets/74553a9d-0c97-4a14-9de3-ecaac3960caf)
+![Screenshot 2024-10-18 173710](https://github.com/user-attachments/assets/8737a9de-0a1f-447b-86bc-7ecccae15ccd)
+
 
 ```
 df.isnull().sum()
 ```
-![is null sum](https://github.com/user-attachments/assets/50e322b2-1d19-4f6a-8083-2a4940b271a2)
+![{DC2E476B-B052-49E3-AA75-962D45B38661}](https://github.com/user-attachments/assets/95caec76-cf9b-40e0-9873-75c3d7062df1)
+
 
 ```
 df.isnull().any()
 ```
-![is null any](https://github.com/user-attachments/assets/fd184f80-613a-4c51-9528-e6d9e9c4c3d7)
+![Screenshot 2024-10-18 173937](https://github.com/user-attachments/assets/cba6485a-2fe0-4883-b567-c498dfeae320)
 
 ```
 df.dropna(axis=0)
 ```
-![dropna](https://github.com/user-attachments/assets/afbad0f5-244d-4033-be98-e2f14faa6d5b)
+![Screenshot 2024-10-18 174119](https://github.com/user-attachments/assets/ac668580-a4cc-4d9f-b934-e1c68d7d92f7)
 
 ### SAVING THE CLEAN DATA 
 ```
-df = df.dropna(axis=0)
+df = df.dropna(axis=1)
 df
 ```
-![dropna](https://github.com/user-attachments/assets/23b194fe-fc59-4156-884e-3f59757d8445)
+![Screenshot 2024-10-18 174200](https://github.com/user-attachments/assets/36574d5e-f070-4fb3-a3a7-f769c957e544)
 
 ### REMOVING OUTLIERS USING IQR 
 ```
@@ -92,17 +96,19 @@ import seaborn as sns
 pf=pd.read_csv('heights.csv')
 pf
 ```
-![Screenshot (165)](https://github.com/user-attachments/assets/465cf710-a8bb-4f75-913d-9cfbd685250e)
+![Screenshot 2024-10-18 174256](https://github.com/user-attachments/assets/0fbfc577-ffc3-4d73-a7f6-cb8ce5785dbe)
 
 ```
 sns.boxplot(data=pf)
 ```
-![image](https://github.com/user-attachments/assets/ae069561-4b2e-4cee-9769-83b6f2174c89)
+![Screenshot 2024-10-18 174452](https://github.com/user-attachments/assets/d05b4b2f-db61-4b8d-ae55-be9829369e72)
+
 ```
 sns.scatterplot(data=pf)
 
 ```
-![image](https://github.com/user-attachments/assets/1170d545-0a22-4bfc-ba03-d8c12d0b043f)
+![Screenshot 2024-10-18 174606](https://github.com/user-attachments/assets/c5a4e95e-f9ea-4a6a-8cf3-f0d082e56415)
+
 ```
 
 Q1 = pf['height'].quantile(0.25)

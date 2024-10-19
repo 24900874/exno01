@@ -107,74 +107,8 @@ sns.boxplot(data=pf)
 sns.scatterplot(data=pf)
 
 ```
-![Screenshot 2024-10-18 174606](https://github.com/user-attachments/assets/c5a4e95e-f9ea-4a6a-8cf3-f0d082e56415)
+![Screenshot 2024-10-18 174606](https://github.com/user-attachments/assets/c5a4e95e-f9ea-4a6a-8cf3-f0d082e56
 
-```
-
-Q1 = pf['height'].quantile(0.25)
-Q3 = pf['height'].quantile(0.75)
-IQR = Q3 - Q1
-LB = Q1 - 1.5 * IQR
-UB = Q3 + 1.5 * IQR
-
-outliers = pf[(pf['height'] < LB) | (pf['height'] > UB)]
-
-print("Lower Bound:", LB)
-print("Upper Bound:", UB)
-print("Outliers:\n", outliers)
-```
-![image](https://github.com/user-attachments/assets/29036b0e-3e88-4a52-9e7c-f3d4d5f38da3)
-
-```
-no_outliers = pf[~((pf['height'] < LB) | (pf['height'] > UB))]
-print(no_outliers)
-```
-![image](https://github.com/user-attachments/assets/1a0ca7ed-d78d-4410-95c2-2413e60c6e30)
-
-```
-sns.boxplot(data=no_outliers)
-```
-
-![image](https://github.com/user-attachments/assets/5dbe39ef-f3b5-42f1-abbf-760b83669699)
-
-```
-sns.scatterplot(data=no_outliers)
-```
-![image](https://github.com/user-attachments/assets/048c781b-ba2e-4dd9-ae5a-02984be4fe8e)
-
-### REMOVING OUTLIERS OF THE SAME DATA USING Z SCORE
-```
-import matplotlib.pyplot as plt
-import scipy.stats as stats
-pf
-```
-![Screenshot (165)](https://github.com/user-attachments/assets/465cf710-a8bb-4f75-913d-9cfbd685250e)
-
-```
-q1=pf['height'].quantile(0.25)
-q2=pf['height'].quantile(0.5)
-q3=pf['height'].quantile(0.75)
-
-iqr=q3-q1
-low= q1-1.5*iqr
-high=q3+1.5*iqr
-
-pf1=pf[((pf['height'] >= low) & (pf['height'] <= high))]
-pf1
-```
-![image](https://github.com/user-attachments/assets/e14dc240-c6f4-4030-a3e1-be684893aa81)
-
-```
-z=np.abs(stats.zscore(pf['height']))
-z
-```
-![image](https://github.com/user-attachments/assets/81c1e955-6334-4de1-a909-4dc056277dff)
-
-```
-pf1 = pf[z<3]
-pf1
-```
-![image](https://github.com/user-attachments/assets/e14dc240-c6f4-4030-a3e1-be684893aa81)
 
 
 # Result

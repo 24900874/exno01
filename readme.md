@@ -107,9 +107,10 @@ sns.boxplot(data=pf)
 sns.scatterplot(data=pf)
 
 ```
-![Screenshot 2024-10-18 174606](https://github.com/user-attachments/assets/c5a4e95e-f9ea-4a6a-8cf3-f0d082e56
+![Screenshot 2024-10-22 052643](https://github.com/user-attachments/assets/aa9b0a65-24c2-4178-9ac0-63799a9ac429)
 
 
+```
 
 # Result
 Thus we have cleaned the data and removed the outliers by detection using IQR and Z-score method
